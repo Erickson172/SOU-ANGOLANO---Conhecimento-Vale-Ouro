@@ -1,514 +1,176 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Como Receber o Seu Dinheiro Agora</title>
+    <title>App do tigre Ao</title>
+    <meta name="description" content="Acessse o link">
+    <meta name="author" content="Lovable">
 
-    <meta name="description" content="Assista ao vídeo completo para saber mais.">
+    <link rel="stylesheet" href="indexa.css">
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            margin: 0;
-            padding: 0;
-        }
 
         body {
-    margin: 0;
-    padding: 0;
-    background: #000;
-    color: #fff;
-    font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
         }
 
-		h1, h2, h3, p {
-    color: #fff;
-        }
-        /* =========================
-           HEADER
-        ========================= */
-
-        .topbar {
-            height: 64px;
-            border-bottom: 1px solid #e5e5e5;
+        /* CONTAINER PRINCIPAL */
+        .min-h-screen {
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            padding: 0 24px;
-            background: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            padding: 20px 15px;
+            background: #000;
         }
 
-        .menu-icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 22px;
-            position: relative;
+        /* TITULO */
+        h1 {
+            color: #fff;
+            text-align: center;
+            font-size: 28px;
+            line-height: 1.4;
+            max-width: 900px;
+            margin-bottom: 25px;
         }
 
-        .menu-icon span {
-            display: block;
-            width: 18px;
-            height: 2px;
-            background: #222;
-            margin: 4px 0;
-            border-radius: 2px;
+        /* TEXTOS */
+        h2,
+        h3,
+        p,
+        span {
+            color: #fff;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 700;
-            font-size: 20px;
-            white-space: nowrap;
-        }
-
-        .logo-icon {
-            width: 32px;
-            height: 22px;
-            background: #ff0000;
-            border-radius: 7px;
-            position: relative;
-        }
-
-        .logo-icon::after {
-            content: "";
-            position: absolute;
-            left: 12px;
-            top: 6px;
-            border-left: 8px solid #fff;
-            border-top: 5px solid transparent;
-            border-bottom: 5px solid transparent;
-        }
-
-        .logo-small {
-            font-size: 10px;
-            font-weight: 500;
-            margin-left: -4px;
-            color: #555;
-        }
-
-        .search-area {
-            width: min(510px, 45vw);
-            height: 40px;
-            margin: 0 auto;
-            display: flex;
-        }
-
-        .search-input {
-            flex: 1;
-            border: 1px solid #d3d3d3;
-            border-right: none;
-            border-radius: 22px 0 0 22px;
-            padding: 0 18px;
-            font-size: 15px;
-            outline: none;
-        }
-
-        .search-button {
-            width: 55px;
-            border: 1px solid #d3d3d3;
-            border-radius: 0 22px 22px 0;
-            background: #f8f8f8;
-            font-size: 18px;
-        }
-
-        .header-icons {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .header-circle {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            background: #f1f1f1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-        }
-
-        /* =========================
-           CONTEÚDO
-        ========================= */
-
-        .page {
-            width: 100%;
-            max-width: 970px;
-            margin: 16px auto 50px;
-            padding: 0 12px;
-        }
-
-        /* =========================
-           VÍDEO
-        ========================= */
-
+        /* VIDEO HORIZONTAL */
         .video-container {
             width: 100%;
+            max-width: 900px;
             position: relative;
             background: #000;
             overflow: hidden;
             aspect-ratio: 16 / 9;
+            margin: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.35);
         }
 
         .video-container iframe {
             position: absolute;
-            inset: 0;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             border: none;
         }
 
-        /* =========================
-           TÍTULO
-        ========================= */
-
-        .video-title {
-            margin-top: 15px;
-            font-size: 21px;
-            line-height: 1.35;
-            font-weight: 700;
-        }
-
-        /* =========================
-           CANAL
-        ========================= */
-
-        .channel-row {
-            display: flex;
-            align-items: center;
-            margin-top: 12px;
-            gap: 12px;
-        }
-
-        .channel-avatar {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: #e5e5e5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .channel-info {
-            flex: 1;
-        }
-
-        .channel-name {
-            font-weight: 700;
-            font-size: 15px;
-        }
-
-        .channel-description {
-            color: #606060;
-            font-size: 12px;
-            margin-top: 3px;
-        }
-
-        .subscribe-btn {
-            border: none;
-            background: #0f0f0f;
-            color: #fff;
-            padding: 11px 17px;
-            border-radius: 22px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
-        /* =========================
-           AÇÕES
-        ========================= */
-
-        .actions {
-            display: flex;
-            justify-content: flex-end;
-            gap: 8px;
-            margin-top: -42px;
-            margin-bottom: 18px;
-        }
-
-        .action-btn {
-            border: none;
-            background: #f2f2f2;
-            border-radius: 22px;
-            padding: 10px 15px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        /* =========================
-           CTA
-        ========================= */
-
-        .cta-container {
-            display: none;
-            margin-top: 22px;
-        }
-
+        /* BOTÃO */
         .cta-btn {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 56px;
-            padding: 14px 20px;
-            border-radius: 15px;
-            background: #df0000;
+            display: inline-block;
+            padding: 18px 35px;
+            font-size: 18px;
+            font-weight: bold;
             color: #000;
             text-decoration: none;
-            font-size: 17px;
-            font-weight: 800;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(223, 0, 0, 0.25);
-            transition: transform .2s ease, background .2s ease;
+            border-radius: 50px;
+            background: linear-gradient(
+                135deg,
+                #FFD700,
+                #FFA500,
+                #FF8C00
+            );
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.6);
+            transition: all 0.3s ease;
         }
 
         .cta-btn:hover {
-            transform: translateY(-2px);
-            background: #c90000;
+            transform: scale(1.08);
         }
 
-        /* =========================
-           INFORMAÇÃO
-        ========================= */
-
-        .info-box {
-            margin-top: 14px;
-            background: #f2f2f2;
-            border-radius: 15px;
-            padding: 17px;
-        }
-
-        .info-top {
-            color: #606060;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .info-text {
-            font-size: 15px;
-            line-height: 1.5;
-        }
-
-        .info-highlight {
-            color: #e00000;
-            font-weight: 700;
-        }
-
-        /* =========================
-           COMENTÁRIOS
-        ========================= */
-
-        .comments-section {
-            margin-top: 25px;
-        }
-
-        .comments-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 14px;
-        }
-
-        .comments-title {
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .comments-count {
-            color: #606060;
-            font-size: 14px;
-        }
-
-        .comments-box {
-            background: #f8f8f8;
-            border-radius: 15px;
-            padding: 14px;
-        }
-
-        .comment {
-            display: flex;
-            gap: 11px;
-            padding: 9px 0;
-        }
-
-        .comment-avatar {
-            width: 34px;
-            height: 34px;
-            min-width: 34px;
-            border-radius: 50%;
-            background: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
+        /* CONTADOR ONLINE */
+        #online-box {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #111;
+            color: #00ff00;
+            padding: 8px 12px;
+            border-radius: 8px;
             font-size: 13px;
+            font-weight: bold;
+            z-index: 999;
         }
 
-        .comment-content {
-            flex: 1;
+        /* NOTIFICAÇÃO */
+        .notif-wpp {
+            position: fixed;
+            top: 70px;
+            right: 10px;
+            background: #000;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            display: none;
+            align-items: center;
+            gap: 10px;
+            z-index: 999;
+            border: 1px solid #333;
         }
 
-        .comment-name {
-            font-size: 14px;
-            font-weight: 700;
+        .emoji {
+            font-size: 22px;
         }
 
-        .comment-time {
-            color: #777;
-            font-size: 12px;
-            font-weight: 400;
-            margin-left: 5px;
+        .notif-texto {
+            display: flex;
+            flex-direction: column;
         }
 
-        .comment-text {
-            font-size: 14px;
-            line-height: 1.4;
-            margin-top: 3px;
+        .notif-texto strong,
+        .notif-texto span {
+            color: #fff;
         }
 
-        .demo-label {
-            margin-top: 12px;
-            color: #777;
-            font-size: 11px;
-            text-align: center;
-        }
+        /* RESPONSIVO */
+        @media (max-width: 480px) {
 
-        /* =========================
-           RESPONSIVO
-        ========================= */
-
-        @media (max-width: 700px) {
-
-            .topbar {
-                height: 55px;
-                padding: 0 12px;
-            }
-
-            .menu-icon {
-                margin-right: 12px;
-            }
-
-            .logo {
-                font-size: 17px;
-            }
-
-            .logo-icon {
-                width: 28px;
-                height: 20px;
-            }
-
-            .search-area {
-                display: none;
-            }
-
-            .header-icons {
-                margin-left: auto;
-                gap: 8px;
-            }
-
-            .page {
-                margin-top: 0;
-                padding: 0;
+            h1 {
+                font-size: 21px;
             }
 
             .video-container {
                 width: 100%;
+                max-width: 100%;
                 aspect-ratio: 16 / 9;
-                max-height: 78vh;
             }
 
-            .video-title {
-                padding: 0 12px;
-                font-size: 18px;
+            .cta-btn {
+                width: 100%;
+                max-width: 320px;
+                font-size: 16px;
             }
 
-            .channel-row {
-                padding: 0 12px;
-            }
-
-            .actions {
-                margin: 12px 12px 0;
-                justify-content: flex-start;
-                overflow-x: auto;
-                padding-bottom: 4px;
-            }
-
-            .action-btn {
-                white-space: nowrap;
-            }
-
-            .cta-container {
-                padding: 0 12px;
-            }
-
-            .info-box {
-                margin-left: 12px;
-                margin-right: 12px;
-            }
-
-            .comments-section {
-                padding: 0 12px;
-            }
         }
 
     </style>
+
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header class="topbar">
+    <div class="min-h-screen">
 
-        <div class="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <h1>
+            ASSISTA O VÍDEO ABAIXO PARA VER COMO RECEBER O SEU DINHEIRO AGORA MESMO
+        </h1>
 
-        <div class="logo">
-            <div class="logo-icon"></div>
-            <span>YouTube</span>
-            <span class="logo-small">AO</span>
-        </div>
-
-        <div class="search-area">
-            <input
-                type="text"
-                class="search-input"
-                placeholder="Pesquisar"
-            >
-
-            <button class="search-button">
-                🔍
-            </button>
-        </div>
-
-        <div class="header-icons">
-            <div class="header-circle">🔔</div>
-            <div class="header-circle">👤</div>
-        </div>
-
-    </header>
-
-
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main class="page">
-
-        <!-- VÍDEO -->
+        <!-- VIDEO HORIZONTAL -->
         <div class="video-container">
 
             <iframe
@@ -524,344 +186,104 @@
 
         </div>
 
-
-        <!-- TÍTULO -->
-        <h1 class="video-title">
-COMO RECEBER O SEU DINHEIRO AGORA — Passo a passo (AO VIVO)
-        </h1>
-
-
-        <!-- CANAL -->
-        <div class="channel-row">
-
-            <div class="channel-avatar">
-                ▶
-            </div>
-
-            <div class="channel-info">
-                <div class="channel-name">
-                    Virgínia Fonseca
-                </div>
-
-                <div class="channel-description">
-                    @virginia • 11,8 M de subscritores
-                </div>
-            </div>
-
-            <button class="subscribe-btn">
-                Seguir
-            </button>
-
-        </div>
-
-
-        <!-- AÇÕES -->
-        <div class="actions">
-
-            <button class="action-btn">
-                👍 48.3 mil
-            </button>
-
-            <button class="action-btn">
-                ↗ Partilhar
-            </button>
-
-            <button class="action-btn">
-                🔖 Guardar
-            </button>
-
-        </div>
-
-
-        <!-- CTA -->
-        <div id="cta-container" class="cta-container">
+        <!-- BOTÃO -->
+        <div
+            id="cta-container"
+            style="display:none; text-align:center; margin-top:20px;"
+        >
 
             <a
                 href="https://standerpay.com/checkout/bed4bb29-1876-4b2f-8e30-257cd984f0be"
-                class="cta-btn">
-                ▶ RECEBER MEU DINHEIRO AGORA
+                class="cta-btn"
+            >
+                💰 Pagar Taxa Anti-Robô
             </a>
 
         </div>
 
+    </div>
 
-        <!-- INFORMAÇÃO -->
-        <div class="info-box">
+    <!-- CONTADOR ONLINE -->
+    <div id="online-box">
+        👥 <span id="online-count">124</span> pessoas online agora
+    </div>
 
-            <div class="info-top">
-                2 845 a assistir • AO VIVO agora
-            </div>
+    <!-- NOTIFICAÇÃO -->
+    <div id="notif-wpp" class="notif-wpp">
 
-            <div class="info-text">
-                Saldo disponível:
-                <span class="info-highlight">115 000 Kz</span>.
-                Assista o vídeo completo para descobrir como levantar agora mesmo na sua conta.
-            </div>
+        <div class="emoji">✅</div>
 
+        <div class="notif-texto">
+            <strong id="notif-nome">Ana</strong>
+            <span id="notif-msg">
+                acabou de levantar dinheiro em Benguela
+            </span>
         </div>
 
-
-        <!-- COMENTÁRIOS -->
-        <section class="comments-section">
-
-            <div class="comments-header">
-
-                <span class="comments-title">
-                    Comentários
-                </span>
-
-                <span class="comments-count">
-                    30
-                </span>
-
-            </div>
-
-
-            <div class="comments-box">
-
-                <div class="comment">
-
-                    <div class="comment-avatar">
-                        BS
-                    </div>
-
-                    <div class="comment-content">
-
-                        <div class="comment-name">
-                            Beatriz Sousa
-                            <span class="comment-time">agora</span>
-                        </div>
-
-                        <div class="comment-text">
-                            Mãe vai ficar tão feliz quando eu chegar com esse dinheiro 🥺
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="comment">
-
-                    <div class="comment-avatar">
-                        JT
-                    </div>
-
-                    <div class="comment-content">
-
-                        <div class="comment-name">
-                            Júlio Tavares
-                            <span class="comment-time">agora</span>
-                        </div>
-
-                        <div class="comment-text">
-                           Confirmado! Caiu no meu IBAN ✅
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="comment">
-
-                    <div class="comment-avatar">
-                        VF
-                    </div>
-
-                    <div class="comment-content">
-
-                        <div class="comment-name">
-                            Virgínia Fonseca
-                            <span class="comment-time">agora</span>
-                        </div>
-
-                        <div class="comment-text">
-                            Quem ainda não clicou no botão laranja em baixo, clica AGORA 👇🔥
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="comment">
-
-                    <div class="comment-avatar">
-                        LC
-                    </div>
-
-                    <div class="comment-content">
-
-                        <div class="comment-name">
-                            Luísa Capitango
-                            <span class="comment-time">agora</span>
-                        </div>
-
-                        <div class="comment-text">
-                            Já é o segundo levantamento que faço hoje 😱
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="comment">
-
-                    <div class="comment-avatar">
-                        AP
-                    </div>
-
-                    <div class="comment-content">
-
-                        <div class="comment-name">
-                            Ana Paula
-                            <span class="comment-time">agora</span>
-                        </div>
-
-                        <div class="comment-text">
-                            Virgínia és um anjo 😇❤️
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="comment">
-
-                    <div class="comment-avatar">
-                        EM
-                    </div>
-
-                    <div class="comment-content">
-
-                        <div class="comment-name">
-                            Edson Miguel
-                            <span class="comment-time">agora</span>
-                        </div>
-
-                        <div class="comment-text">
-                            Pessoal aproveitem antes que feche!!!
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="comment">
-
-                    <div class="comment-avatar">
-                        RS
-                    </div>
-
-                    <div class="comment-content">
-
-                        <div class="comment-name">
-                            Rui Santos
-                            <span class="comment-time">agora</span>
-                        </div>
-
-                        <div class="comment-text">
-                            Caiu direito na conta, estou chocado.
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="comment">
-
-                    <div class="comment-avatar">
-                        MC
-                    </div>
-
-                    <div class="comment-content">
-
-                        <div class="comment-name">
-                            Marina Costa
-                            <span class="comment-time">agora</span>
-                        </div>
-
-                        <div class="comment-text">
-                           Minha mãe não acreditou quando lhe disse, obrigadoo Virginia.
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="comment">
-
-                    <div class="comment-avatar">
-                        JN
-                    </div>
-
-                    <div class="comment-content">
-
-                        <div class="comment-name">
-                            João Neves
-                            <span class="comment-time">agora</span>
-                        </div>
-
-                        <div class="comment-text">
-                            Está lá dentro, agora vou comprar o meu iphone 11 na caixa.
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="comment">
-
-                    <div class="comment-avatar">
-                        SO
-                    </div>
-
-                    <div class="comment-content">
-
-                        <div class="comment-name">
-                            Susana Oliveira
-                            <span class="comment-time">agora</span>
-                        </div>
-
-                        <div class="comment-text">
-                            Pensei que fosse burla, fui na fé e deu certo, o dinheiro caiu na conta!
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="demo-label">
-                    Comentários apresentados como demonstração visual.
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         LÓGICA EXISTENTE
-         BOTÃO APÓS 6min27s
-    ========================= -->
+    </div>
 
     <script>
 
+        // MOSTRAR BOTÃO APÓS 6min27s
         setTimeout(function () {
 
             document.getElementById("cta-container").style.display = "block";
 
         }, 387000);
+
+
+        // CONTADOR ONLINE
+        function atualizarOnline() {
+
+            const numero =
+                Math.floor(Math.random() * (320 - 120)) + 120;
+
+            document.getElementById("online-count").innerText = numero;
+        }
+
+        setInterval(atualizarOnline, 3000);
+
+
+        // NOTIFICAÇÕES
+        const pessoas = [
+            "Carlos",
+            "Ana",
+            "Domingos",
+            "Edna"
+        ];
+
+        const provincias = [
+            "Luanda",
+            "Benguela",
+            "Huambo"
+        ];
+
+        function mostrarNotif() {
+
+            const nome =
+                pessoas[Math.floor(Math.random() * pessoas.length)];
+
+            const provincia =
+                provincias[Math.floor(Math.random() * provincias.length)];
+
+            document.getElementById("notif-nome").innerText = nome;
+
+            document.getElementById("notif-msg").innerText =
+                " acabou de levantar dinheiro em " + provincia;
+
+            const box =
+                document.getElementById("notif-wpp");
+
+            box.style.display = "flex";
+
+            setTimeout(() => {
+
+                box.style.display = "none";
+
+            }, 4000);
+        }
+
+        setInterval(mostrarNotif, 8000);
 
     </script>
 
